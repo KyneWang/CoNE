@@ -42,7 +42,7 @@ def main():
     config.relationNum = loader.relationNum
     config.startTimeSpan = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     # load extra data
-    dm = ExtraDataManager(config.data_path, loader.entityDict, loader.relationDict2)
+    dm = ExtraDataManager(config.data_path, loader.entityDict, loader.relationDict)
     neiMatrix = np.array(dm.load_EntNei(path=config.data_path + "entity_neighbors_com.txt",max_length = 20))
     neiMatrix = neiMatrix[:,:config.nei_size]
     # build dataset
